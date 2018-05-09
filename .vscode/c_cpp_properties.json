@@ -1,0 +1,48 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "/opt/Qt"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "${workspaceFolder}",
+                "/opt/Qt/5.10.1/gcc_64/include",
+                "/opt/Qt/5.10.1/gcc_64/include/QtWidgets",
+                "${workspaceFolder}/src/services/utils/logger",
+                "${workspaceFolder}/src/services/utils/command_line_parser",
+                "${workspaceFolder}/src/services/data_structures",
+                "${workspaceFolder}/src/services/system",
+                "${workspaceFolder}/src/plugins/controllers",
+                "${workspaceFolder}/src/plugins/models",
+                "${workspaceFolder}/src/plugins/views",
+                "${workspaceFolder}/src/plugins/views/atlas_ui_view",
+                "${workspaceFolder}/src/controller/core/filter",
+                "${workspaceFolder}/src/model",
+                "${workspaceFolder}/src/view",
+                "${workspaceFolder}/src/controller/core/sensor_filter",
+                "${workspaceFolder}/src/plugins/controllers/mono_image_controller",
+                "${workspaceFolder}/src/plugins/controllers/mono_image_controller/mono_image_filter",
+                "${workspaceFolder}/src/plugins/models/mono_image_model",
+                "${workspaceFolder}/src/plugins/models/mono_image_model/mono_image_data_source",
+                "${workspaceFolder}/src/plugins/views/atlas_ui_view/atlas_ui/include",
+                "${workspaceFolder}/src/plugins/models/mono_image_model/mono_image_data_structures",
+                "${workspaceFolder}/src/plugins/models/mono_image_model/mono_image_data_processor",
+                "${workspaceFolder}/src/plugins/controllers/mono_image_controller/mono_image_sensor_filter",
+                "${workspaceFolder}/src/plugins/controllers/mono_image_controller/mono_image_odometry_filter",
+                "${workspaceFolder}/src/controller/core/odometry_filter",
+                "${workspaceFolder}/src/controller"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
