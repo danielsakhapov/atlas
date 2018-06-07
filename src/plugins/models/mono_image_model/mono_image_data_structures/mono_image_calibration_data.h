@@ -7,9 +7,12 @@
 
 struct MonoImageCalibrationData : CalibrationData
 {
-	MonoImageCalibrationData(double f, cv::Point2d pp);
-	double f;
-	cv::Point2d pp;
+    double f;
+    cv::Point2d pp;
+
+    MonoImageCalibrationData(
+        double f, 
+        cv::Point2d pp);
 };
 
 #endif // MONO_IMAGE_CALIBRATION_DATA_H

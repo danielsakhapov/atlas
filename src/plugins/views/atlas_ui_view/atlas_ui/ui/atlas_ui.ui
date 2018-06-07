@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1151</width>
-    <height>674</height>
+    <height>607</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,13 +26,45 @@
    <enum>Qt::ToolButtonIconOnly</enum>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="ImageWidget" name="imageWidget" native="true">
+   <widget class="atlas_ui::ImageWidget" name="map" native="true">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>320</x>
       <y>10</y>
-      <width>1111</width>
-      <height>591</height>
+      <width>811</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+   </widget>
+   <widget class="atlas_ui::ImageWidget" name="lp_match" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>291</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+   </widget>
+   <widget class="atlas_ui::ImageWidget" name="frame" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>280</y>
+      <width>291</width>
+      <height>251</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -49,7 +81,7 @@
      <x>0</x>
      <y>0</y>
      <width>1151</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -78,7 +110,7 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>ImageWidget</class>
+   <class>atlas_ui::ImageWidget</class>
    <extends>QWidget</extends>
    <header>image_widget.h</header>
    <container>1</container>

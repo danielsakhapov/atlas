@@ -16,15 +16,18 @@ namespace atlas {
 class DataProcessor
 {
 public:
-	DataProcessor() = default;
-	virtual ~DataProcessor() = default;
+    DataProcessor() = default;
+    virtual ~DataProcessor() = default;
 
-	void SetCalibrationData(std::shared_ptr<CalibrationData> data);
-	virtual std::unique_ptr<ProcessedSensorData> ProcessSensorData(std::unique_ptr<RawSensorData> data) const = 0;
-	virtual std::unique_ptr<ProcessedOdometryData> ProcessOdometryData(std::unique_ptr<RawOdometryData> data) const = 0;
+    void SetCalibrationData(
+        std::shared_ptr<CalibrationData> data);
+    virtual std::unique_ptr<ProcessedSensorData> ProcessSensorData(
+        std::unique_ptr<RawSensorData> data) const = 0;
+    virtual std::unique_ptr<ProcessedOdometryData> ProcessOdometryData(
+        std::unique_ptr<RawOdometryData> data) const = 0;
 
 protected:
-	std::shared_ptr<CalibrationData> calibration_data_;
+    std::shared_ptr<CalibrationData> calibration_data_;
 };
 
 } // namespace atlas

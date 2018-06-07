@@ -12,10 +12,15 @@ namespace atlas {
 class View
 {
 public:
-	virtual ~View() = default;
+    virtual ~View() = default;
 
-	virtual void MainLoop(int argc, char* argv[]) = 0;
-	virtual void Show(std::unique_ptr<VisualizationData> data) = 0;
+    virtual void MainLoop(
+        int argc, 
+        char* argv[]) = 0;
+    virtual void Show(
+        std::unique_ptr<VisualizationData> map,
+        std::unique_ptr<VisualizationData> sensor_data,
+        std::unique_ptr<VisualizationData> odometry_data) = 0;
 };
 
 } // namespace atlas

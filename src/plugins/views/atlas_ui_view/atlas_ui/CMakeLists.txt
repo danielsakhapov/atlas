@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt5Widgets REQUIRED)
 
 include_directories(
-	${CMAKE_CURRENT_LIST_DIR}/include
+    ${CMAKE_CURRENT_LIST_DIR}/include
 )
 
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/src SOURCES)
@@ -26,11 +26,11 @@ add_library(${PROJECT_NAME} ${SOURCES} ${UIS} ${MOCS})
 add_library(view::atlas_ui ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME}
-	PUBLIC
-	${CMAKE_CURRENT_LIST_DIR}/include
+    PUBLIC
+    ${CMAKE_CURRENT_LIST_DIR}/include
 )
 
 target_link_libraries(${PROJECT_NAME}
-	Qt5::Widgets
+    Qt5::Widgets
 )
 

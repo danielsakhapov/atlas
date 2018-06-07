@@ -13,6 +13,9 @@
 #include "model.h"
 #include "controller.h"
 
+#include "filter.h"
+#include "mapper.h"
+
 #include "views_list.h"
 #include "models_list.h"
 #include "controllers_list.h"
@@ -22,7 +25,9 @@ namespace atlas {
 class Startup
 {
 public:
-	static void Start(int argc, char* argv[]);
+    static void Start(
+        int argc, 
+        char* argv[]);
 };
 
 } // namespace atlas

@@ -11,16 +11,23 @@ class AtlasUI;
 
 class AtlasUI : public QMainWindow
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	explicit AtlasUI(QWidget* parent = nullptr);
-	~AtlasUI();
+    explicit AtlasUI(
+        QWidget* parent = nullptr);
+    ~AtlasUI();
 
-	void ShowImage(const QImage& img);
-	void resizeEvent(QResizeEvent*) override;
+    void ShowMap(
+        const QImage& img);
+    void ShowFrame(
+        const QImage& img);
+    void ShowLpMatch(
+        const QImage& img);
+    void resizeEvent(
+        QResizeEvent*) override;
 
 private:
-	Ui::AtlasUI* ui_;
+    Ui::AtlasUI* ui_;
 };
 
 }

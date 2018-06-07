@@ -3,8 +3,8 @@
 
 struct CalibrationData
 {
-	CalibrationData() = default;
-	virtual ~CalibrationData() = default;
+    CalibrationData() = default;
+    virtual ~CalibrationData() = default;
 };
 
 #endif // CALIBRATION_DATA_H

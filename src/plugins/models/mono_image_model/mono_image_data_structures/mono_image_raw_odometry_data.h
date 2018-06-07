@@ -7,8 +7,11 @@
 
 struct MonoImageRawOdometryData : RawOdometryData
 {
-	MonoImageRawOdometryData(size_t id, cv::Mat&& frame);
-	cv::Mat frame;
+    cv::Mat frame;
+    
+    MonoImageRawOdometryData(
+        size_t id, 
+        cv::Mat&& frame);
 };
 
 #endif // MONO_IMAGE_RAW_ODOMETRY_DATA_H

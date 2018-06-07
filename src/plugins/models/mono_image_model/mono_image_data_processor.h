@@ -18,15 +18,17 @@
 class MonoImageDataProcessor : public atlas::DataProcessor
 {
 public:
-	MonoImageDataProcessor() = default;
-	~MonoImageDataProcessor() = default;
-	
-	std::unique_ptr<ProcessedSensorData> ProcessSensorData(std::unique_ptr<RawSensorData> data) const;
-	std::unique_ptr<ProcessedOdometryData> ProcessOdometryData(std::unique_ptr<RawOdometryData> data) const;
+    MonoImageDataProcessor() = default;
+    ~MonoImageDataProcessor() = default;
+    
+    std::unique_ptr<ProcessedSensorData> ProcessSensorData(
+        std::unique_ptr<RawSensorData> data) const;
+    std::unique_ptr<ProcessedOdometryData> ProcessOdometryData(
+        std::unique_ptr<RawOdometryData> data) const;
 
 private:
-	double f_;
-	cv::Point2d pp_;
+    double f_;
+    cv::Point2d pp_;
 };
 
 #endif // MONO_IMAGE_DATA_PROCESSOR_H

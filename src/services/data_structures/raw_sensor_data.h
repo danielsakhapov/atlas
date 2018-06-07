@@ -1,14 +1,12 @@
 #ifndef RAW_SENSOR_DATA_H
 #define RAW_SENSOR_DATA_H
 
-#include <stddef.h>
-
 struct RawSensorData
 {
-	RawSensorData() = default;
-	virtual ~RawSensorData() = default;
+    size_t id;
 
-	size_t id;
+    RawSensorData() = default;
+    virtual ~RawSensorData() = default;
 };
 
 #endif // RAW_SENSOR_DATA_H

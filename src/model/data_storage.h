@@ -17,33 +17,41 @@ namespace atlas {
 class DataStorage
 {
 public:
-	DataStorage() = default;
-	~DataStorage() = default;
+    DataStorage();
+    ~DataStorage() = default;
 
-	bool SensorDataEmpty() const;
-	bool OdometryDataEmpty() const;
-	bool CalibrationDataEmpty() const;
+    void SetNoSensorDataLeft();
+    void SetNoOdometryDataLeft();
 
-	std::unique_ptr<ProcessedSensorData> GetSensorData();
-	std::shared_ptr<CalibrationData> GetCalibrationData();
-	std::unique_ptr<ProcessedOdometryData> GetOdometryData();
+    bool IsSensorDataLeft() const;
+    bool IsOdometryDataLeft() const;
+    bool IsCalibrationDataEmpty() const;
 
-	void SetCalibrationData(std::shared_ptr<CalibrationData> data);
-	void PushSensorData(std::unique_ptr<ProcessedSensorData> data);
-	void PushOdometryData(std::unique_ptr<ProcessedOdometryData> data);
+    std::unique_ptr<ProcessedSensorData> GetSensorData();
+    std::shared_ptr<CalibrationData> GetCalibrationData();
+    std::unique_ptr<ProcessedOdometryData> GetOdometryData();
+
+    void SetCalibrationData(
+        std::shared_ptr<CalibrationData> data);
+    void PushSensorData(
+        std::unique_ptr<ProcessedSensorData> data);
+    void PushOdometryData(
+        std::unique_ptr<ProcessedOdometryData> data);
 
 private:
-	std::mutex sensor_data_mutex_;
-	std::mutex odometry_data_mutex_;
-	std::mutex calibration_data_mutex_;
+    bool is_sensor_data_left_;
+	bool is_odometry_data_left_;
 
-	std::condition_variable_any sensor_data_cond_var_;
-	std::condition_variable_any odometry_data_cond_var_;
+    std::mutex sensor_data_mutex_;
+    std::mutex odometry_data_mutex_;
+    std::mutex calibration_data_mutex_;
 
-	std::shared_ptr<CalibrationData> calibration_data_;
-	std::queue<std::unique_ptr<ProcessedSensorData>> sensor_data_queue_;
-	std::queue<std::unique_ptr<ProcessedOdometryData>> odometry_data_queue_;
+    std::condition_variable_any sensor_data_cond_var_;
+    std::condition_variable_any odometry_data_cond_var_;
 
+    std::shared_ptr<CalibrationData> calibration_data_;
+    std::queue<std::unique_ptr<ProcessedSensorData>> sensor_data_queue_;
+    std::queue<std::unique_ptr<ProcessedOdometryData>> odometry_data_queue_;
 };
 
 } // namespace atlas

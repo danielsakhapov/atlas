@@ -14,16 +14,23 @@
 class AtlasUIView final : public atlas::View
 {
 public:
-	AtlasUIView() = default;
-	~AtlasUIView() = default;
+    AtlasUIView() = default;
+    ~AtlasUIView() = default;
 
-	void MainLoop(int argc, char* argv[]) final;
-	void Show(std::unique_ptr<VisualizationData> data) final;
+    void MainLoop(
+        int argc, 
+        char* argv[]) final;
+    void Show(
+        std::unique_ptr<VisualizationData> map,
+        std::unique_ptr<VisualizationData> sensor_data,
+        std::unique_ptr<VisualizationData> odometry_data) final;
 private:
-	std::unique_ptr<atlas_ui::AtlasUI> atlas_ui_;
+    std::unique_ptr<atlas_ui::AtlasUI> atlas_ui_;
 
-	inline QImage CvMatToQImage(const cv::Mat& mat);
-	inline QPixmap CvMatToQPixmap(const cv::Mat& mat);
+    inline QImage CvMatToQImage(
+        cv::Mat&& mat);
+    inline QPixmap CvMatToQPixmap(
+        cv::Mat&& mat);
 };
 
 #endif // ATLAS_UI_VIEW_H

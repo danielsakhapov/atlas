@@ -7,8 +7,11 @@
 
 struct MonoImageProcessedOdometryData : ProcessedOdometryData
 {
-	MonoImageProcessedOdometryData(size_t id, cv::Mat&& frame);
-	cv::Mat frame;
+    cv::Mat frame;
+
+    MonoImageProcessedOdometryData(
+        size_t id, 
+        cv::Mat&& frame);
 };
 
 #endif // MONO_IMAGE_PROCESSED_ODOMETRY_DATA_H

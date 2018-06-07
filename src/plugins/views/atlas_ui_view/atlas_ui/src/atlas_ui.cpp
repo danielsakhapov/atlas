@@ -3,32 +3,43 @@
 
 namespace atlas_ui {
 
-AtlasUI::AtlasUI(QWidget *parent) :
-	QMainWindow(parent),
-	ui_(new Ui::AtlasUI)
+AtlasUI::AtlasUI(
+    QWidget *parent) :
+        QMainWindow(parent),
+        ui_(new Ui::AtlasUI)
 {
-	ui_->setupUi(this);
+    ui_->setupUi(this);
 }
-
-
 
 AtlasUI::~AtlasUI()
 {
-	delete ui_;
+    delete ui_;
 }
 
-
-
-void AtlasUI::resizeEvent(QResizeEvent*)
+void AtlasUI::resizeEvent(
+    QResizeEvent*)
 {
-	ui_->imageWidget->ResizeLayout(QSize(width(), height()));
+    ui_->map->ResizeLayout(QSize(width(), height()));
+    ui_->frame->ResizeLayout(QSize(width(), height()));
+    ui_->lp_match->ResizeLayout(QSize(width(), height()));
 }
 
-
-
-void AtlasUI::ShowImage(const QImage& img)
+void AtlasUI::ShowMap(
+    const QImage& img)
 {
-	ui_->imageWidget->ShowImage(img);
+    ui_->map->ShowImage(img);
+}
+
+void AtlasUI::ShowFrame(
+    const QImage& img)
+{
+    ui_->frame->ShowImage(img);
+}
+
+void AtlasUI::ShowLpMatch(
+    const QImage& img)
+{
+    ui_->lp_match->ShowImage(img);
 }
 
 }

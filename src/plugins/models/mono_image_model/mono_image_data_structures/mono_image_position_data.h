@@ -7,9 +7,12 @@
 
 struct MonoImagePositionData : PositionData
 {
-	MonoImagePositionData(cv::Mat R, cv::Mat t);
-	cv::Mat R;
-	cv::Mat t;
+    cv::Mat R;
+    cv::Mat t;
+
+    MonoImagePositionData(
+        cv::Mat R, 
+        cv::Mat t);
 };
 
 #endif // MONO_IMAGE_POSITION_DATA_H

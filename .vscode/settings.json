@@ -1,8 +1,8 @@
 {
     "C_Cpp.intelliSenseEngineFallback": "Enabled",
     "C_Cpp.errorSquiggles": "Enabled",
-    "editor.tabSize": 8,
-    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
     "files.associations": {
         "sstream": "cpp",
         "array": "cpp",
@@ -45,6 +45,13 @@
         "type_traits": "cpp",
         "typeinfo": "cpp",
         "utility": "cpp",
-        "qapplication": "cpp"
+        "qapplication": "cpp",
+        "atomic": "cpp",
+        "numeric": "cpp",
+        "cstdarg": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp"
     }
 }

@@ -11,10 +11,7 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../model ${CMAKE_HOME_DIRECTORY}/buil
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../view ${CMAKE_HOME_DIRECTORY}/build/view)
 
 include_directories(
-	${CMAKE_CURRENT_LIST_DIR}
-	${CMAKE_CURRENT_LIST_DIR}/core/filter
-	${CMAKE_CURRENT_LIST_DIR}/core/sensor_filter
-	${CMAKE_CURRENT_LIST_DIR}/core/odometry_filter
+    ${CMAKE_CURRENT_LIST_DIR}
 )
 
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../plugins/controllers ${CMAKE_HOME_DIRECTORY}/build/controllers)
@@ -27,12 +24,12 @@ add_library(atlas::controller ALIAS ${PROJECT_NAME})
 
 get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
 target_include_directories(${PROJECT_NAME}
-	PUBLIC
-	${dirs}
+    PUBLIC
+    ${dirs}
 )
 
 target_link_libraries(${PROJECT_NAME}
-	atlas::view
-	atlas::model
-	atlas::controllers
+    atlas::view
+    atlas::model
+    atlas::controllers
 )

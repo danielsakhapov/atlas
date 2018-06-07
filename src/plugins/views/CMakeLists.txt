@@ -9,8 +9,8 @@ include(${CMAKE_CURRENT_LIST_DIR}/../models/mono_image_model/mono_image_data_str
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/atlas_ui_view/atlas_ui)
 
 include_directories(
-	${CMAKE_CURRENT_LIST_DIR}
-	${CMAKE_CURRENT_LIST_DIR}/atlas_ui_view
+    ${CMAKE_CURRENT_LIST_DIR}
+    ${CMAKE_CURRENT_LIST_DIR}/atlas_ui_view
 )
 
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/atlas_ui_view SOURCES)
@@ -21,10 +21,10 @@ add_library(atlas::views ALIAS ${PROJECT_NAME})
 
 get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
 target_include_directories(${PROJECT_NAME}
-	PUBLIC
-	${dirs}
+    PUBLIC
+    ${dirs}
 )
 
 target_link_libraries(${PROJECT_NAME}
-	view::atlas_ui
+    view::atlas_ui
 )

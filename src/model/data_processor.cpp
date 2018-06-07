@@ -3,14 +3,14 @@
 namespace atlas
 {
 
-void DataProcessor::SetCalibrationData(std::shared_ptr<CalibrationData> data)
+void DataProcessor::SetCalibrationData(
+    std::shared_ptr<CalibrationData> data)
 {
-	if (data) {
-		calibration_data_ = data;
-	}
-	else {
-		atlas::Logger::FatalError({"calibration data is empty while calling MonoImageDataProcessor::SetCalibrationData"});
-	}
+    if (!data) {
+        atlas::Logger::Warning({"calibration data is nullptr while calling DataProcessor::SetCalibrationData"});
+    }
+
+    calibration_data_ = data;
 }
 
 } // namespace atlas

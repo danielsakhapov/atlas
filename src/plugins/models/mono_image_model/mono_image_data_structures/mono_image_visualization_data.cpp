@@ -1,6 +1,7 @@
 #include "mono_image_visualization_data.h"
 
-MonoImageVisualizationData::MonoImageVisualizationData(cv::Mat frame)
+MonoImageVisualizationData::MonoImageVisualizationData(
+    cv::Mat frame)
 {
-	this->frame  = frame;
+    this->frame = frame;
 }

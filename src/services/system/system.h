@@ -17,14 +17,16 @@ namespace atlas {
 class System
 {
 public:
-	System() = default;
-	~System() = default;
+    System() = default;
+    ~System() = default;
 
-	void Initialize(const CommandLineParser& parser);
-	std::string GetConfigValue(const std::string& config) const;
+    void Initialize(
+        const CommandLineParser& parser);
+    std::string GetConfigValue(
+        const std::string& config) const;
 
 private:
-	std::map<std::string, std::string> configs_;
+    std::map<std::string, std::string> configs_;
 };
 
 }

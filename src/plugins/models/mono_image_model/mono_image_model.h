@@ -19,15 +19,17 @@
 class MonoImageModel final : public atlas::Model
 {
 public:
-	MonoImageModel() = default;
-	~MonoImageModel() = default;
+    MonoImageModel() = default;
+    ~MonoImageModel() = default;
 
-	void Initialize(const atlas::System& sys) final;
+    void Initialize(
+        const atlas::System& sys) final;
 
 private:
-	std::mutex odometry_data_mutex_;
-	std::queue<ProcessedOdometryData> odometry_data_queue_;
-	std::shared_ptr<CalibrationData> calibration_data_;
+    std::mutex odometry_data_mutex_;
+    std::queue<ProcessedOdometryData> odometry_data_queue_;
+    
+    std::shared_ptr<CalibrationData> calibration_data_;
 };
 
 #endif // MONO_IMAGE_MODEL_H

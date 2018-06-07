@@ -7,8 +7,10 @@
 
 struct MonoImageVisualizationData : VisualizationData
 {
-	MonoImageVisualizationData(cv::Mat frame);
-	cv::Mat frame;
+    cv::Mat frame;
+
+    MonoImageVisualizationData(
+        cv::Mat frame);
 };
 
 #endif // MONO_IMAGE_VISUALIZATION_DATA_H

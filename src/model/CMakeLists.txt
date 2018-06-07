@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(${CMAKE_CURRENT_LIST_DIR}/../services/CMakeLists.txt)
 
 include_directories(
-	${CMAKE_CURRENT_LIST_DIR}
+    ${CMAKE_CURRENT_LIST_DIR}
 )
 
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR} SOURCES)
@@ -21,10 +21,10 @@ add_library(atlas::model ALIAS ${PROJECT_NAME})
 
 get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
 target_include_directories(${PROJECT_NAME}
-	PUBLIC
-	${dirs}
+    PUBLIC
+    ${dirs}
 )
 
 target_link_libraries(${PROJECT_NAME}
-	atlas::models
+    atlas::models
 )

@@ -11,8 +11,8 @@ find_package(OpenCV REQUIRED)
 find_package(Threads REQUIRED)
 
 include_directories(
-	src
-	${OpenCV_INCLUDE_DIRS}
+    src
+    ${OpenCV_INCLUDE_DIRS}
 )
 
 aux_source_directory(src SOURCES)
@@ -21,9 +21,9 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_LIST_DIR}/bin)
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})
 
 target_link_libraries(${CMAKE_PROJECT_NAME}
-	atlas::model
-	atlas::view
-	atlas::controller
-	Threads::Threads
-	${OpenCV_LIBRARIES}
+    atlas::model
+    atlas::view
+    atlas::controller
+    Threads::Threads
+    ${OpenCV_LIBRARIES}
 )
