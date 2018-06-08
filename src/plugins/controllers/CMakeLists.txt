@@ -12,15 +12,16 @@ include_directories(
 )
 
 set(LIBRARY_OUTPUT_PATH ${CMAKE_HOME_DIRECTORY}/lib)
-add_library(${PROJECT_NAME})
+add_library(${PROJECT_NAME} INTERFACE)
 add_library(atlas::controllers ALIAS ${PROJECT_NAME})
 
 get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
 target_include_directories(${PROJECT_NAME}
-    PUBLIC
+    INTERFACE
     ${dirs}
 )
 
 target_link_libraries(${PROJECT_NAME}
+    INTERFACE
     controller::mono_image
 )
