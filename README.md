@@ -1,1 +1,3 @@
 # atlas
+
+Simple visual odometry
